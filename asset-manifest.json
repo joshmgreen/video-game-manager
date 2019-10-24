@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/video-game-manager/static/css/main.b100e6da.chunk.css",
+    "main.js": "/video-game-manager/static/js/main.795da985.chunk.js",
+    "main.js.map": "/video-game-manager/static/js/main.795da985.chunk.js.map",
+    "runtime-main.js": "/video-game-manager/static/js/runtime-main.39d72c07.js",
+    "runtime-main.js.map": "/video-game-manager/static/js/runtime-main.39d72c07.js.map",
+    "static/js/2.874e19fc.chunk.js": "/video-game-manager/static/js/2.874e19fc.chunk.js",
+    "static/js/2.874e19fc.chunk.js.map": "/video-game-manager/static/js/2.874e19fc.chunk.js.map",
+    "index.html": "/video-game-manager/index.html",
+    "precache-manifest.c14859cc977ac647adc778a7a4d1d66b.js": "/video-game-manager/precache-manifest.c14859cc977ac647adc778a7a4d1d66b.js",
+    "service-worker.js": "/video-game-manager/service-worker.js",
+    "static/css/main.b100e6da.chunk.css.map": "/video-game-manager/static/css/main.b100e6da.chunk.css.map",
+    "static/media/logo.svg": "/video-game-manager/static/media/logo.25bf045c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.39d72c07.js",
+    "static/js/2.874e19fc.chunk.js",
+    "static/css/main.b100e6da.chunk.css",
+    "static/js/main.795da985.chunk.js"
+  ]
+}
