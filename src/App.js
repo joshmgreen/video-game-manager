@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
-import VideoGameList from './components/VideoGameList';
-import VideoGame from './components/VideoGame';
-
-const videoGames = [
-  { id: 1, name: 'World of Warcraft' },
-  { id: 2, name: 'Fire Emblem' },
-  { id: 3, name: 'League of Legends' },
-  { id: 4, name: 'Death Stranding' }
-];
+import axios from 'axios';
+import Home from './pages/Home';
 
 class App extends Component {
   render() {
     return (
       <div className='App'>
-        <VideoGameList games={videoGames} />
+        <Router>
+          <Home />
+        </Router>
       </div>
     );
   }
