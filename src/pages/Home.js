@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 import './Home.css';
 
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = { games: [] };
+    this.state = {
+      games: [],
+      isLoaded: false
+    };
+  }
+
+  componentDidMount() {
+    fetch('');
   }
 
   // Save items to the list
@@ -26,7 +31,7 @@ class Home extends Component {
   render() {
     return (
       <div className='container'>
-        <h1> TO-DO List</h1>
+        <h1> Video Game Manager</h1>
         <br />
         <input
           type='text'
