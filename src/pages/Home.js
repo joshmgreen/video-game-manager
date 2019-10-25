@@ -6,13 +6,37 @@ class Home extends Component {
     super(props);
     this.state = {
       games: [],
-      isLoaded: false
+      isLoaded: false,
+      query: 'mario'
     };
   }
 
   componentDidMount() {
-    fetch('');
+    this.search('');
   }
+
+  onChange = e => {
+    const { value } = e.target;
+    this.setState({
+      query: value
+    });
+    this.search(value);
+  };
+
+  search = async query => {
+    const url = `https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/games/?search=${query}&fields=id,name,summary`;
+
+    const results = await fetch(url, {
+      method: 'get',
+      headers: new Headers({
+        'user-key': '7228d71b77b1e753f65e405e7fa1f66e'
+      })
+    });
+
+    const data = await results.json();
+    console.log(data);
+    this.setState({ games: data });
+  };
 
   // Save items to the list
   save() {
@@ -31,35 +55,21 @@ class Home extends Component {
   render() {
     return (
       <div className='container'>
-        <h1> Video Game Manager</h1>
-        <br />
-        <input
-          type='text'
-          ref={ip => {
-            this.TextField = ip;
-          }}
-        />
-        <br />
-        <button
-          onClick={this.save.bind(this)}
-          className='btn btn-primary glyphicon glyphicon-floppy-saved'
-        >
-          Save
-        </button>
-        <button
-          onClick={this.clear.bind(this)}
-          className='btn btn-primary glyphicon glyphicon-floppy-saved'
-        >
-          Clear
-        </button>
-        <br />
-        <div className='gameList'>
-          <ul>
-            {this.state.games.map(function(games) {
-              return <li>{games}</li>;
-            })}
-          </ul>
-        </div>
+        <form>
+          <input
+            type='test'
+            className='search-box'
+            placeholder='Search for...'
+            onChange={this.onChange}
+          />
+          {this.state.games.map(game => (
+            <ul key={game.id}>
+              <li>
+                {game.id} {game.name}
+              </li>
+            </ul>
+          ))}
+        </form>
       </div>
     );
   }
