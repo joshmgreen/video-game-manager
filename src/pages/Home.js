@@ -6,42 +6,53 @@ import './Home.css';
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: '', items: [] };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = { games: [] };
   }
 
-  handleChange(event) {
-    this.setState({ value: event.target.value });
+  // Save items to the list
+  save() {
+    var games = [...this.state.games];
+    games.push(this.TextField.value);
+    this.setState({ games });
+    // Clear the text field after you press save
+    this.TextField.value = '';
   }
 
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
+  // Clear the list
+  clear() {
+    this.setState({ games: [] });
   }
 
   render() {
     return (
       <div className='container'>
-        <form onSubmit={this.handleSubmit}>
-          <TextField
-            className='input'
-            id='outlined-name'
-            label='Name'
-            value={this.state.value}
-            onChange={this.handleChange}
-            margin='normal'
-            variant='outlined'
-          />
-          <label>
-            <br />
-            <br />
-            <Button variant='contained' color='default' type='submit'>
-              Test
-            </Button>
-          </label>
-        </form>
+        <h1> TO-DO List</h1>
+        <br />
+        <input
+          type='text'
+          ref={ip => {
+            this.TextField = ip;
+          }}
+        />
+        <br />
+        <button
+          onClick={this.save.bind(this)}
+          className='btn btn-primary glyphicon glyphicon-floppy-saved'
+        >
+          Save
+        </button>
+        <button
+          onClick={this.clear.bind(this)}
+          className='btn btn-primary glyphicon glyphicon-floppy-saved'
+        >
+          Clear
+        </button>
+        <br />
+        <ul>
+          {this.state.games.map(function(games) {
+            return <li>{games}</li>;
+          })}
+        </ul>
       </div>
     );
   }
