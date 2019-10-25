@@ -1,11 +1,11 @@
 .container {
-  background-color: darkslategrey;
-  height: 30vh; /* Magic here */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  align-content: center;
 }
 
 body {
   background-color: darkslategray;
+}
+
+.gameList {
+  list-style: inside;
 }

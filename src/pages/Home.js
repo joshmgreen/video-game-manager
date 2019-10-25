@@ -48,11 +48,13 @@ class Home extends Component {
           Clear
         </button>
         <br />
-        <ul>
-          {this.state.games.map(function(games) {
-            return <li>{games}</li>;
-          })}
-        </ul>
+        <div className='gameList'>
+          <ul>
+            {this.state.games.map(function(games) {
+              return <li>{games}</li>;
+            })}
+          </ul>
+        </div>
       </div>
     );
   }
