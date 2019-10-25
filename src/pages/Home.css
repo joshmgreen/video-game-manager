@@ -1,0 +1,11 @@
+.container {
+  background-color: darkslategrey;
+  height: 30vh; /* Magic here */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: darkslategray;
+}
