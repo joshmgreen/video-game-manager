@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import VideoGameList from './components/VideoGameList';
+import VideoGame from './components/VideoGame';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const videoGames = [
+  { id: 1, name: 'World of Warcraft' },
+  { id: 2, name: 'Fire Emblem' },
+  { id: 3, name: 'League of Legends' },
+  { id: 4, name: 'Death Stranding' }
+];
+
+class App extends Component {
+  render() {
+    return (
+      <div className='App'>
+        <VideoGameList games={videoGames} />
+      </div>
+    );
+  }
 }
-
 export default App;
