@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: darkslategray;
+  background-image: linear-gradient(teal, pink);
 }
 
 .gameList {

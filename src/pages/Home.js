@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Home.css';
+import TextField from '@material-ui/core/TextField';
 
 class Home extends Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class Home extends Component {
     this.state = {
       games: [],
       isLoaded: false,
-      query: 'mario'
+      query: 'Zelda'
     };
   }
 
@@ -38,34 +39,22 @@ class Home extends Component {
     this.setState({ games: data });
   };
 
-  // Save items to the list
-  save() {
-    var games = [...this.state.games];
-    games.push(this.TextField.value);
-    this.setState({ games });
-    // Clear the text field after you press save
-    this.TextField.value = '';
-  }
-
-  // Clear the list
-  clear() {
-    this.setState({ games: [] });
-  }
-
   render() {
     return (
       <div className='container'>
         <form>
-          <input
-            type='test'
+          <TextField
+            id='outlined-name'
+            type='text'
             className='search-box'
             placeholder='Search for...'
+            variant='outlined'
             onChange={this.onChange}
           />
           {this.state.games.map(game => (
             <ul key={game.id}>
               <li>
-                {game.id} {game.name}
+                {game.name} {game.summary}
               </li>
             </ul>
           ))}
