@@ -57,7 +57,7 @@ class Home extends Component {
                 <h2 class='header'> {game.name} </h2>
                 <div class='card horizontal'>
                   <div class='card-image'>
-                    <img alt='' src='https://lorempixel.com/100/190/nature/6' />
+                    <img alt='' src='' />
                   </div>
                   <div class='card-stacked'>
                     <div class='card-content'>
