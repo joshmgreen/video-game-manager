@@ -62,6 +62,7 @@ class Home extends Component {
                   <div class='card-stacked'>
                     <div class='card-content'>
                       <p>{game.summary}</p>
+                      <p>{game.id}</p>
                     </div>
                     <div class='card-action'></div>
                   </div>
